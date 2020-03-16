@@ -1,6 +1,8 @@
 # udacity-udagram
 udacity cloud developer project
 
+GITHUB URL: https://github.com/Mohsin-GitHub/udacity-udagram
+
 DEV TESTING
 1. npm install
 2. npm run dev
