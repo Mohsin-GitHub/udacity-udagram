@@ -37,15 +37,15 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     res.send("try GET /filteredimage?image_url={{}}")
   } );
 
-  app.get("/filteredimage", async ( req, res) => {
-    var imageUrl = req.query.image_url;
+  app.get("/filteredimage", async ( request, response) => {
+    var imageUrl = request.query.image_url;
     console.log("IMage URl: " + imageUrl);
     filterImageFromURL(imageUrl).then((returnedImage) => {
       console.log("Succees: " + returnedImage);
-      res.sendFile(returnedImage);
+      response.sendFile(returnedImage);
     }).catch((error) => {
       console.log("Exception while processing image: " + error);
-      return res.status(442).send({error: "An error occurred while processing the image. Please try again later"});
+      return response.status(442).send({error: "An error occurred while processing the image. Please try again later"});
     });
   });
 
